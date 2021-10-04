@@ -11,6 +11,7 @@
   "author": "Rodrigo Saling",
   "license": "MIT",
   "dependencies": {
+    "nanoid": "^3.1.25",
     "ws": "^8.0.0"
   },
   "devDependencies": {
