@@ -1,7 +1,11 @@
 import { WebSocketServer } from 'ws';
 import { nanoid } from 'nanoid';
 
-const wss = new WebSocketServer({ port: 8080 });
+const PORT = 8080;
+
+const wss = new WebSocketServer({ port: PORT });
+
+console.log(`WS server ready on port ${PORT}`);
 
 const games = [];
 const players = [];
@@ -27,13 +31,12 @@ const createPlayer = () => {
   return newPlayer;
 };
 
-const joinGame = (gameId, playerId) => {
-  return games[gameId].players.push({
-    id: playerId,
-    symbol: '',
-    status: 'joined',
-  });
-};
+// const joinGame = (gameId, playerId) =>
+//   games[gameId].players.push({
+//     id: playerId,
+//     symbol: '',
+//     status: 'joined',
+//   });
 
 wss.on('connection', (ws) => {
   console.log('handshake complete');
@@ -48,10 +51,12 @@ wss.on('connection', (ws) => {
     switch (type) {
       case 'create game':
         ws.send(JSON.stringify({ id, type, game: createGame() }));
+        createGame();
         break;
       case 'join game':
         break;
       case 'create player':
+        createPlayer();
         break;
       case 'set play':
         break;

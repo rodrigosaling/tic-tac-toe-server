@@ -5,22 +5,21 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rodrigo Saling",
   "license": "MIT",
   "dependencies": {
-    "nanoid": "^3.1.25",
-    "ws": "^8.0.0"
+    "nanoid": "^4.0.0",
+    "ws": "^8.12.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-prettier": "^4.0.0",
-    "nodemon": "^2.0.12",
-    "prettier": "^2.3.2"
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.2"
   }
 }
