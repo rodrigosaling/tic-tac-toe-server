@@ -51,7 +51,6 @@ wss.on('connection', (ws) => {
     switch (type) {
       case 'create game':
         ws.send(JSON.stringify({ id, type, game: createGame() }));
-        createGame();
         break;
       case 'join game':
         break;
